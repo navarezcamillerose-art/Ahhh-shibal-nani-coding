@@ -26,3 +26,32 @@ public class SumOfDigits {
         }
     }
 }
+
+
+
+
+
+
+
+
+public class SumOfDigits {
+
+    static int number = 1234;
+
+    public static int sumOfDigits(int number) {
+        // BASE CASE
+        if (number == 0) {
+            return 0;
+        }
+        // RECURSIVE CASE
+        return (number % 10) + sumOfDigits(number / 10);
+    }
+
+    public static void main(String[] args) {
+        if (number < 0) {
+            System.out.println("Invalid input");
+        } else {
+            System.out.println("Sum of digits of " + number + " = " + sumOfDigits(number));
+        }
+    }
+}
