@@ -55,3 +55,34 @@ public class SumOfDigits {
         }
     }
 }
+
+
+
+
+
+import java.util.Scanner;
+
+public class SumOfDigits {
+
+    public static int sumOfDigits(int number) {
+        // BASE CASE
+        if (number == 0) {
+            return 0;
+        }
+        // RECURSIVE CASE
+        return (number % 10) + sumOfDigits(number / 10);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a non-negative integer: ");
+        int number = input.nextInt();
+
+        if (number < 0) {
+            System.out.println("Invalid input");
+        } else {
+            System.out.println("Sum of digits of " + number + " = " + sumOfDigits(number));
+        }
+    }
+}
