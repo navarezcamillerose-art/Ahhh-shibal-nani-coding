@@ -224,3 +224,41 @@ public class SumOfDigits {
     }
 }
 
+
+
+import java.util.Scanner;
+
+public class SumOfDigits {
+
+    // Calculates the sum of digits using recursion
+    public static int sumOfDigits(int number) {
+
+        // Stops when the number becomes 0
+        if (number == 0) {
+            return 0;
+        }
+
+        // Adds the last digit to the remaining digits
+        return (number % 10) + sumOfDigits(number / 10);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        // Ask the user for a number
+        System.out.print("Enter a non-negative integer: ");
+        int number = input.nextInt();
+
+        // Check if the input is valid
+        if (number < 0) {
+            System.out.println("Invalid input");
+        } else {
+            // Display the sum of digits
+            System.out.println("Sum of digits of " + number + " = " + sumOfDigits(number));
+        }
+
+        input.close();
+    }
+}
+
