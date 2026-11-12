@@ -1,0 +1,28 @@
+public class SumOfDigits {
+
+    // Recursive method: returns the sum of the digits of a non-negative integer
+    public static int sumOfDigits(int number) {
+        // BASE CASE: no digits left, so the sum is 0
+        if (number == 0) {
+            return 0;
+        }
+        // RECURSIVE CASE: last digit + sum of the remaining digits
+        return (number % 10) + sumOfDigits(number / 10);
+    }
+
+    public static void main(String[] args) {
+        // Sample test cases from the activity, plus extra ones of my own
+        int[] testInputs = {1234, 507, 9, 0, 86420,   // given samples
+                            100, 99999, 1000000, -5}; // my own tests (-5 is invalid)
+
+        for (int input : testInputs) {
+            // Input validation (done in main, not in the recursive method)
+            if (input < 0) {
+                System.out.println("Input: " + input + " -> Invalid (must be non-negative)");
+            } else {
+                int result = sumOfDigits(input);
+                System.out.println("sumOfDigits(" + input + ") = " + result);
+            }
+        }
+    }
+}
