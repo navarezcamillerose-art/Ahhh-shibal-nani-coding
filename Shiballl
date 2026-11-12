@@ -338,3 +338,97 @@ public class Main2 {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class RecursiveArrayAnalysis {
+
+    // Calculates the sum of array elements
+    public static int arraySum(int[] values, int index) {
+
+        // Base case: stops at the end of the array
+        if (index == values.length) {
+            return 0;
+        }
+
+        // Adds the current element to the remaining elements
+        return values[index] + arraySum(values, index + 1);
+    }
+
+    // Finds the largest element
+    public static int findMaximum(int[] values, int index) {
+
+        // Base case: returns the last element
+        if (index == values.length - 1) {
+            return values[index];
+        }
+
+        // Gets the maximum of the remaining elements
+        int maximum = findMaximum(values, index + 1);
+
+        // Compares the current element with the maximum
+        if (values[index] > maximum) {
+            return values[index];
+        } else {
+            return maximum;
+        }
+    }
+
+    // Counts the even elements
+    public static int countEven(int[] values, int index) {
+
+        // Base case: stops at the end of the array
+        if (index == values.length) {
+            return 0;
+        }
+
+        // Checks if the current element is even
+        if (values[index] % 2 == 0) {
+            return 1 + countEven(values, index + 1);
+        } else {
+            return countEven(values, index + 1);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        // Gets the array size
+        int size = input.nextInt();
+
+        if (size <= 0) {
+            System.out.println("Invalid array size");
+        } else {
+
+            int[] values = new int[size];
+
+            // Reads the array elements
+            for (int i = 0; i < size; i++) {
+                values[i] = input.nextInt();
+            }
+
+            // Performs the recursive calculations
+            int sum = arraySum(values, 0);
+            int maximum = findMaximum(values, 0);
+            int evenCount = countEven(values, 0);
+
+            // Displays the results
+            System.out.println("Array Sum: " + sum);
+            System.out.println("Largest Element: " + maximum);
+            System.out.println("Number of Even Elements: " + evenCount);
+        }
+
+        input.close();
+    }
+}
+
