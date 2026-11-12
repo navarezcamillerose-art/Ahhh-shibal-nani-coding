@@ -129,3 +129,22 @@ public class Main {
         return (number % 10) + sumOfDigits(number / 10);
     }
 }
+
+
+
+
+Tests
+✘ 5 numbers with evens
+expected: "106" · got: "5"
+✘ all odd
+expected: "0" · got: "3"
+✘ negatives (hidden) (hidden)
+Logic checks
+✘ required uses a loop to read the numbers
+✘ required uses the remainder (modulo) operator for evenness
+✔ solution computes the answer (no hardcoded test outputs)
+Style
+○ Uses descriptive variable names (e.g. sum, evenSum)
+✔ Contains at least one explanatory comment
+Feedback
+3 of 3 test cases didn't match the expected output yet. Check the problem requirements: uses a loop to read the numbers; uses the remainder (modulo) operator for evenness. Style feedback: uses descriptive variable names (e.g. sum, evensum). Look at each failing test's expected vs actual output and trace your logic on paper with that input.
