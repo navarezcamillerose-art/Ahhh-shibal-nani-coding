@@ -148,3 +148,37 @@ Style
 ✔ Contains at least one explanatory comment
 Feedback
 3 of 3 test cases didn't match the expected output yet. Check the problem requirements: uses a loop to read the numbers; uses the remainder (modulo) operator for evenness. Style feedback: uses descriptive variable names (e.g. sum, evensum). Look at each failing test's expected vs actual output and trace your logic on paper with that input.
+
+
+
+
+
+import java.util.Scanner;
+
+public class SumOfEvenNumbers {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int evenSum = 0;
+
+        int size = input.nextInt();
+
+        // Read the numbers
+        for (int i = 0; i < size; i++) {
+
+            int number = input.nextInt();
+
+            // Check if even
+            if (number % 2 == 0) {
+                evenSum += number;
+            }
+        }
+
+        // Display the sum
+        System.out.println(evenSum);
+
+        input.close();
+    }
+}
